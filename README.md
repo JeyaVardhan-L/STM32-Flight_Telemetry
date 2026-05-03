@@ -10,7 +10,7 @@ Due to a strict deadline and missing UART bridge hardware, this project utilizes
 * The **STM32 Blue Pill** hijacks the Arduino's onboard USB-to-Serial TTL chip.
 * This allows the ARM Cortex-M3 processor to stream fused sensor data at 115200 baud directly to the PC.
 
-![Hardware Setup](assets/Finmodule.jpg)
+![Hardware Setup](assets/Finmodule.png)
 
 ## ⚙️ Core Features
 * **Bare-Metal Math:** The Complementary Filter runs directly on the STM32, blending Gyroscope and Accelerometer data to eliminate jitter and drift.
