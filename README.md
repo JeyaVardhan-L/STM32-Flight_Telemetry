@@ -1,5 +1,5 @@
 <div align="center">
-  <h1>🚀 STM32 Zero-Latency Telemetry & Sensor Fusion</h1>
+  <h1> STM32 Zero-Latency Telemetry & Sensor Fusion</h1>
   <p>A high-performance, browser-based 3D telemetry dashboard and flight controller prototype.</p>
   
   <!-- The width="800" keeps the dashboard screenshot perfectly sized and centered -->
@@ -7,10 +7,10 @@
   <br><br>
 </div>
 
-## 📌 Overview
+##  Overview
 This project demonstrates raw I2C sensor reading, mathematical sensor fusion, and direct hardware-to-browser communication. By utilizing the modern **Web Serial API**, the custom dashboard renders procedural 3D models and fluid graphs in real-time without the need for a Python or Node.js backend.
 
-## 🛠️ The Hardware "Hack"
+##  The Hardware "Hack"
 <div align="center">
   <!-- The width="400" makes the hardware photo half-size so it doesn't take up the whole screen -->
   <img src="assets/Finmodule.png" width="400" style="border-radius: 8px;">
@@ -27,7 +27,7 @@ Due to a strict deadline and missing UART bridge hardware, this project utilizes
 * **Web Serial API:** Native USB COM port reading directly in Chrome/Edge.
 * **Procedural 3D:** Generates Quadcopter, Satellite, and Rocket models on the fly using Three.js.
 
-## 🔌 Wiring Guide
+##  Wiring Guide
 
 | Component | STM32 Pin | Arduino Bridge Pin |
 | :--- | :--- | :--- |
@@ -36,15 +36,19 @@ Due to a strict deadline and missing UART bridge hardware, this project utilizes
 | **UART TX** | PA9 | Arduino TX (Pin 1) |
 | **UART RX** | PA10 | Arduino RX (Pin 0) |
 
-> ⚠️ **Note:** The Arduino `RESET` pin must be jumpered to `GND`, and the STM32 must share a `GND` line with the Arduino.
+> **Note:** The Arduino `RESET` pin must be jumpered to `GND`, and the STM32 must share a `GND` line with the Arduino.
 
-## 🚀 How to Run
+##  How to Run
 1. Flash the `firmware.ino` to your STM32F103C8T6 using an ST-Link V2.
 2. Wire the hardware as shown in the guide above.
 3. Open the `index.html` file in a Chromium-based browser (Chrome/Edge), or visit the Live GitHub Pages Link.
 4. Select your 3D model, click **Initialize UART**, and select your USB COM port!
 
-## 📌 Overview
+##  Overview
 This project demonstrates raw I2C sensor reading, mathematical sensor fusion, and direct hardware-to-browser communication. By utilizing the modern **Web Serial API**, the custom dashboard renders procedural 3D models and fluid graphs in real-time without the need for a Python or Node.js backend.
 
 📖 **Read the detailed Report of Errors here** [The Development Journey & Bug Log](Report.md)
+
+
+
+Live Web interface: [https://jeyavardhan-l.github.io/STM32-Flight_Telemetry/](https://jeyavardhan-l.github.io/STM32-Flight_Telemetry/)
