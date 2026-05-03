@@ -1,6 +1,6 @@
 # 🚀 STM32 Zero-Latency Telemetry & Sensor Fusion
 
-![Dashboard Screenshot](assets/web.png)
+![Dashboard Screenshot](assets/Web.png)
 
 A high-performance, browser-based 3D telemetry dashboard and flight controller prototype. This project demonstrates raw I2C sensor reading, mathematical sensor fusion (Complementary Filter), and direct hardware-to-browser communication via the Web Serial API.
 
