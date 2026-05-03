@@ -43,3 +43,8 @@ Due to a strict deadline and missing UART bridge hardware, this project utilizes
 2. Wire the hardware as shown in the guide above.
 3. Open the `index.html` file in a Chromium-based browser (Chrome/Edge), or visit the Live GitHub Pages Link.
 4. Select your 3D model, click **Initialize UART**, and select your USB COM port!
+
+## 📌 Overview
+This project demonstrates raw I2C sensor reading, mathematical sensor fusion, and direct hardware-to-browser communication. By utilizing the modern **Web Serial API**, the custom dashboard renders procedural 3D models and fluid graphs in real-time without the need for a Python or Node.js backend.
+
+📖 **Read the detailed Report of Errors here** [The Development Journey & Bug Log](Report.md)
