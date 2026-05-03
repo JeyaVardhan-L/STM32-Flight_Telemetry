@@ -43,9 +43,3 @@ Due to a strict deadline and missing UART bridge hardware, this project utilizes
 2. Wire the hardware as shown in the guide above.
 3. Open the `index.html` file in a Chromium-based browser (Chrome/Edge), or visit the Live GitHub Pages Link.
 4. Select your 3D model, click **Initialize UART**, and select your USB COM port!
-
-## 🚀 How to Run
-1. Flash the `firmware.ino` to your STM32F103C8T6 using an ST-Link V2.
-2. Wire the hardware as shown above.
-3. Open the `dashboard/index.html` file in a Chromium-based browser (Chrome/Edge).
-4. Select your 3D model, click **Initialize UART**, and select your USB COM port!
