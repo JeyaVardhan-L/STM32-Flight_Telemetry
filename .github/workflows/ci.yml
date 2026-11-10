@@ -1,0 +1,34 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  firmware:
+    name: Compile firmware (Blue Pill)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: arduino/compile-sketches@v1
+        with:
+          fqbn: STMicroelectronics:stm32:GenF1:pnum=BLUEPILL_F103C8
+          platforms: |
+            - name: STMicroelectronics:stm32
+              source-url: https://github.com/stm32duino/BoardManagerFiles/raw/main/package_stmicroelectronics_index.json
+          libraries: |
+            - name: Adafruit MPU6050
+          sketch-paths: |
+            - firmware/MPU_STMbp_Flight_telemetry
+
+  dashboard:
+    name: Dashboard parser tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node --test
