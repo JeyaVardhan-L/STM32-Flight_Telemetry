@@ -1,0 +1,17 @@
+# Arduino / PlatformIO build output
+build/
+*.bin
+*.elf
+*.hex
+.pio/
+
+# Editor and OS files
+.vscode/
+.idea/
+.claude/
+*.swp
+.DS_Store
+Thumbs.db
+
+# Local recordings (copy the one you want into demo/flight.csv)
+flight-*.csv
