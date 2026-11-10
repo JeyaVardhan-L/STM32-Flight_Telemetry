@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 560" width="980" height="560" font-family="Inter, -apple-system, 'Segoe UI', Roboto, sans-serif">
+  <title>Wiring: ST-Link V2, STM32 Blue Pill, MPU6050 and Arduino Uno used as a USB-serial bridge</title>
+  <style>
+    .bg { fill: #08090a; }
+    .box { fill: #141516; stroke: #34343a; stroke-width: 1; }
+    .sub { fill: #1c1c1f; stroke: #34343a; stroke-width: 1; }
+    .title { fill: #f7f8f8; font-size: 15px; font-weight: 600; }
+    .meta { fill: #8a8f98; font-size: 12px; }
+    .pin { fill: #d0d6e0; font-size: 12px; font-family: 'JetBrains Mono', ui-monospace, Consolas, monospace; }
+    .wire { stroke: #d0d6e0; stroke-width: 1.5; fill: none; }
+    .data { stroke: #f7f8f8; stroke-width: 2; fill: none; }
+    .gnd { stroke: #62666d; stroke-width: 1.5; fill: none; stroke-dasharray: 4 3; }
+    .dot { fill: #f7f8f8; }
+    .label { fill: #8a8f98; font-size: 11px; }
+    .note { fill: #8a8f98; font-size: 12px; }
+    .noteb { fill: #d0d6e0; font-size: 12px; }
+  </style>
+
+  <rect class="bg" width="980" height="560" rx="8"/>
+
+  <!-- ST-Link V2 -->
+  <rect class="box" x="40" y="50" width="200" height="170" rx="6"/>
+  <text class="title" x="60" y="80">ST-Link V2</text>
+  <text class="meta" x="60" y="98">SWD programmer · USB to PC</text>
+  <text class="pin" x="226" y="124" text-anchor="end">3.3V</text>
+  <text class="pin" x="226" y="149" text-anchor="end">GND</text>
+  <text class="pin" x="226" y="174" text-anchor="end">SWDIO</text>
+  <text class="pin" x="226" y="199" text-anchor="end">SWCLK</text>
+
+  <!-- MPU6050 -->
+  <rect class="box" x="40" y="310" width="200" height="170" rx="6"/>
+  <text class="title" x="60" y="340">MPU6050</text>
+  <text class="meta" x="60" y="358">GY-521 breakout · I2C 0x68</text>
+  <text class="pin" x="226" y="384" text-anchor="end">VCC</text>
+  <text class="pin" x="226" y="409" text-anchor="end">GND</text>
+  <text class="pin" x="226" y="434" text-anchor="end">SCL</text>
+  <text class="pin" x="226" y="459" text-anchor="end">SDA</text>
+
+  <!-- STM32 Blue Pill -->
+  <rect class="box" x="380" y="50" width="230" height="430" rx="6"/>
+  <text class="title" x="400" y="76">STM32 Blue Pill</text>
+  <text class="meta" x="400" y="93">STM32F103C8T6 · Cortex-M3</text>
+  <rect class="sub" x="388" y="105" width="150" height="104" rx="4"/>
+  <text class="pin" x="396" y="124">3V3</text>
+  <text class="pin" x="396" y="149">GND</text>
+  <text class="pin" x="396" y="174">SWDIO</text>
+  <text class="pin" x="396" y="199">SWCLK</text>
+  <text class="label" x="530" y="124" text-anchor="end">SWD header</text>
+  <text class="pin" x="394" y="384">3V3</text>
+  <text class="pin" x="394" y="409">GND</text>
+  <text class="pin" x="394" y="434">PB6 · I2C1 SCL</text>
+  <text class="pin" x="394" y="459">PB7 · I2C1 SDA</text>
+  <text class="pin" x="596" y="249" text-anchor="end">PA9 · USART1 TX</text>
+  <text class="pin" x="596" y="274" text-anchor="end">PA10 · USART1 RX</text>
+  <text class="pin" x="596" y="299" text-anchor="end">GND</text>
+
+  <!-- Arduino Uno -->
+  <rect class="box" x="740" y="200" width="200" height="280" rx="6"/>
+  <text class="title" x="760" y="226">Arduino Uno</text>
+  <text class="meta" x="760" y="242">used only as a USB-serial bridge</text>
+  <text class="pin" x="754" y="274">D1 (TX)</text>
+  <text class="pin" x="754" y="299">D0 (RX)</text>
+  <text class="pin" x="754" y="324">GND</text>
+  <rect class="sub" x="752" y="344" width="176" height="70" rx="4"/>
+  <text class="pin" x="764" y="368">RESET</text>
+  <text class="pin" x="764" y="400">GND</text>
+  <path class="data" d="M 852 364 C 880 364 880 396 852 396"/>
+  <circle class="dot" cx="852" cy="364" r="3"/>
+  <circle class="dot" cx="852" cy="396" r="3"/>
+  <text class="label" x="886" y="384">jumper</text>
+  <text class="meta" x="760" y="438">ATmega328P held in reset;</text>
+  <text class="meta" x="760" y="454">its 16U2 USB chip talks to the PC</text>
+
+  <!-- ST-Link to SWD header -->
+  <path class="wire" d="M 240 120 H 388"/>
+  <path class="gnd"  d="M 240 145 H 388"/>
+  <path class="wire" d="M 240 170 H 388"/>
+  <path class="wire" d="M 240 195 H 388"/>
+  <text class="label" x="314" y="112" text-anchor="middle">powers the Blue Pill</text>
+
+  <!-- MPU6050 to Blue Pill -->
+  <path class="wire" d="M 240 380 H 380"/>
+  <path class="gnd"  d="M 240 405 H 380"/>
+  <path class="data" d="M 240 430 H 380"/>
+  <path class="data" d="M 240 455 H 380"/>
+  <text class="label" x="310" y="472" text-anchor="middle">I2C · 400 kHz</text>
+
+  <!-- UART to Arduino -->
+  <path class="data" d="M 610 245 H 740"/>
+  <path class="data" d="M 610 270 H 740"/>
+  <path class="gnd"  d="M 610 295 H 680 V 320 H 740"/>
+  <text class="label" x="675" y="238" text-anchor="middle">TX → TX *</text>
+  <text class="label" x="675" y="263" text-anchor="middle">RX ← RX</text>
+  <text class="label" x="672" y="316" text-anchor="end">common GND</text>
+
+  <!-- legend / notes -->
+  <line class="data" x1="40" y1="514" x2="66" y2="514"/>
+  <text class="note" x="74" y="518">signal</text>
+  <line class="wire" x1="130" y1="514" x2="156" y2="514"/>
+  <text class="note" x="164" y="518">power / SWD</text>
+  <line class="gnd" x1="250" y1="514" x2="276" y2="514"/>
+  <text class="note" x="284" y="518">ground</text>
+  <text class="noteb" x="380" y="514">* TX→TX is intentional: with the 328P in reset, D1 feeds the Uno's USB-serial chip.</text>
+  <text class="note" x="380" y="532">PA10 is 5 V-tolerant, so the Uno's 5 V serial output is safe. All grounds are shared.</text>
+</svg>
